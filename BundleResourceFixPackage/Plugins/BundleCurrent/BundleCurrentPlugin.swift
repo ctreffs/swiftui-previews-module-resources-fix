@@ -47,6 +47,7 @@ extension SwiftSourceModuleTarget {
 }
 
 // https://developer.apple.com/forums/thread/664295?answerId=673644022#673644022
+// https://gist.github.com/ctreffs/ad9d23e08d586cf75e4d1c3bb1b1061f
 func generateBundleExtensionSwift(packageName: String, targetName: String) -> String {
     """
     import class Foundation.Bundle
