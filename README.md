@@ -21,3 +21,4 @@ Process: XCPreviewAgent
 
 - https://forums.swift.org/t/xcode-previews-swiftpm-resources-xcpreviewagent-crashed/51680/8
 - https://stackoverflow.com/questions/64540082/xcode-12-swiftui-preview-doesnt-work-on-swift-package-when-have-another-swift/65789298#65789298
+- https://feedbackassistant.apple.com/feedback/10102512
