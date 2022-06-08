@@ -6,36 +6,23 @@ let package = Package(
     platforms: [.iOS(.v15)],
     products: [
         .library( name: "BundleResourceFixPackage", targets: ["ModuleA", "ModuleB"]),
-        .library(name: "ModuleUI", targets: ["ModuleUI"]),
-        .plugin(name: "BundleCurrent", targets: ["BundleCurrent"]),
-        .executable(name: "BundleCurrentCLI", targets: ["BundleCurrentCLI"])
+        .library(name: "ModuleUI", targets: ["ModuleUI"])
     ],
     dependencies: [],
     targets: [
         .target(
             name: "ModuleA",
             dependencies: [],
-            resources: [.copy("Resources/A.png")], // https://stackoverflow.com/a/70456592/6043526
-            plugins: ["BundleCurrent"]
+            resources: [.copy("Resources/A.png")] // https://stackoverflow.com/a/70456592/6043526
         ),
         .target(
             name: "ModuleB",
             dependencies: [],
-            resources: [.copy("Resources/B.png")], // https://stackoverflow.com/a/70456592/6043526
-            plugins: ["BundleCurrent"]
+            resources: [.copy("Resources/B.png")] // https://stackoverflow.com/a/70456592/6043526
         ),
         .target(
             name: "ModuleUI",
             dependencies: ["ModuleA", "ModuleB"]
-        ),
-        // MARK: - Plugin
-        .plugin(
-            name: "BundleCurrent",
-            capability: .buildTool(),
-            dependencies: ["BundleCurrentCLI"]
-        ),
-        .executableTarget(
-            name: "BundleCurrentCLI"
         )
     ]
 )
